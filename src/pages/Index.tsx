@@ -145,9 +145,14 @@ export default function Index() {
 
       <section className="bg-accent text-white py-20">
         <div className="container mx-auto px-4 max-w-2xl">
+          <div className="bg-black px-8 py-6 mb-12">
+            <div className="text-5xl font-bold mb-4">45 000 ₽</div>
+            <div className="text-lg opacity-90">Полный курс • 6 недель • Поддержка 3 месяца</div>
+          </div>
+
           <h2 className="text-4xl md:text-5xl mb-8">Записаться на курс</h2>
           <p className="text-xl mb-12 opacity-90">
-            Оставь заявку, и мы свяжемся с тобой в течение суток.
+            Оплати курс и мы свяжемся с тобой для начала обучения.
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -195,12 +200,29 @@ export default function Index() {
               />
             </div>
             
-            <Button 
-              type="submit" 
-              className="w-full h-14 text-lg bg-black text-white hover:bg-gray-900"
-            >
-              Отправить заявку
-            </Button>
+            <div className="space-y-4">
+              <Button 
+                type="submit" 
+                className="w-full h-14 text-lg bg-black text-white hover:bg-gray-900"
+              >
+                Оплатить 45 000 ₽
+              </Button>
+              
+              <div className="border-t-2 border-white/20 pt-6">
+                <p className="text-sm opacity-75 mb-3">Или переведи на карту:</p>
+                <div className="bg-black/30 p-4 space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">Номер карты:</span>
+                    <span className="font-mono text-lg">2200 7007 1234 5678</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm">Получатель:</span>
+                    <span>Иван Иванов</span>
+                  </div>
+                </div>
+                <p className="text-xs opacity-60 mt-3">После оплаты отправь чек в Telegram</p>
+              </div>
+            </div>
           </form>
         </div>
       </section>
