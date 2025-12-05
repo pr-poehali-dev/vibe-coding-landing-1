@@ -221,7 +221,10 @@ export default function Index() {
                   className="mt-1 border-white data-[state=checked]:bg-black data-[state=checked]:border-black"
                 />
                 <label htmlFor="personalData" className="text-sm leading-relaxed cursor-pointer">
-                  Я согласен на обработку персональных данных в соответствии с политикой конфиденциальности
+                  Я согласен на обработку персональных данных в соответствии с{' '}
+                  <a href="/privacy" className="underline hover:opacity-70">
+                    политикой конфиденциальности
+                  </a>
                 </label>
               </div>
               
@@ -233,7 +236,11 @@ export default function Index() {
                   className="mt-1 border-white data-[state=checked]:bg-black data-[state=checked]:border-black"
                 />
                 <label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer">
-                  Я принимаю условия публичной оферты и согласен с правилами предоставления услуг
+                  Я принимаю условия{' '}
+                  <a href="/offer" className="underline hover:opacity-70">
+                    публичной оферты
+                  </a>
+                  {' '}и согласен с правилами предоставления услуг
                 </label>
               </div>
             </div>
