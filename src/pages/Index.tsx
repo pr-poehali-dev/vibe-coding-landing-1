@@ -89,11 +89,7 @@ export default function Index() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-white text-black p-8 border-0">
-              <img 
-                src="https://cdn.poehali.dev/projects/4a612102-2313-47ce-97d2-0baf486ec21c/files/5f910841-2c38-4107-bf70-decaec036c63.jpg" 
-                alt="Diamond icon"
-                className="w-20 h-20 mb-4 object-contain"
-              />
+              <div className="w-16 h-16 bg-black rounded-full mb-4" />
               <h3 className="text-2xl mb-3 font-bold">Эстетика кода</h3>
               <p className="text-gray-600">
                 Код должен быть красивым. Не только работать, но и выглядеть правильно.
@@ -101,11 +97,7 @@ export default function Index() {
             </Card>
             
             <Card className="bg-white text-black p-8 border-0">
-              <img 
-                src="https://cdn.poehali.dev/projects/4a612102-2313-47ce-97d2-0baf486ec21c/files/1b549078-7521-4050-85d3-eec50bd69185.jpg" 
-                alt="Lightning icon"
-                className="w-20 h-20 mb-4 object-contain"
-              />
+              <div className="w-16 h-16 bg-black mb-4" />
               <h3 className="text-2xl mb-3 font-bold">Скорость мысли</h3>
               <p className="text-gray-600">
                 Научишься думать интерфейсами. Видеть решение до написания кода.
@@ -113,11 +105,7 @@ export default function Index() {
             </Card>
             
             <Card className="bg-white text-black p-8 border-0">
-              <img 
-                src="https://cdn.poehali.dev/projects/4a612102-2313-47ce-97d2-0baf486ec21c/files/ee0972f9-31ba-4b30-9b33-1d956686f142.jpg" 
-                alt="Target icon"
-                className="w-20 h-20 mb-4 object-contain"
-              />
+              <div className="w-16 h-16 bg-black mb-4" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
               <h3 className="text-2xl mb-3 font-bold">Только практика</h3>
               <p className="text-gray-600">
                 Никакой теории ради теории. Каждое занятие — реальный проект.
