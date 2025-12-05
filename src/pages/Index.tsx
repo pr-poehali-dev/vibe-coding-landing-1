@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
 
 export default function Index() {
@@ -14,8 +15,18 @@ export default function Index() {
     message: ''
   });
 
+  const [agreements, setAgreements] = useState({
+    personalData: false,
+    terms: false
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!agreements.personalData || !agreements.terms) {
+      toast.error('Необходимо принять все соглашения');
+      return;
+    }
     
     const applications = JSON.parse(localStorage.getItem('applications') || '[]');
     applications.push({
@@ -27,6 +38,7 @@ export default function Index() {
     
     toast.success('Заявка отправлена!');
     setFormData({ fullName: '', telegram: '', email: '', message: '' });
+    setAgreements({ personalData: false, terms: false });
   };
 
   const modules = [
@@ -198,6 +210,32 @@ export default function Index() {
                 className="bg-white text-black border-0 min-h-24"
                 placeholder="Расскажи о себе и своих целях..."
               />
+            </div>
+            
+            <div className="space-y-4 pt-4">
+              <div className="flex items-start gap-3">
+                <Checkbox 
+                  id="personalData"
+                  checked={agreements.personalData}
+                  onCheckedChange={(checked) => setAgreements({ ...agreements, personalData: checked as boolean })}
+                  className="mt-1 border-white data-[state=checked]:bg-black data-[state=checked]:border-black"
+                />
+                <label htmlFor="personalData" className="text-sm leading-relaxed cursor-pointer">
+                  Я согласен на обработку персональных данных в соответствии с политикой конфиденциальности
+                </label>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Checkbox 
+                  id="terms"
+                  checked={agreements.terms}
+                  onCheckedChange={(checked) => setAgreements({ ...agreements, terms: checked as boolean })}
+                  className="mt-1 border-white data-[state=checked]:bg-black data-[state=checked]:border-black"
+                />
+                <label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer">
+                  Я принимаю условия публичной оферты и согласен с правилами предоставления услуг
+                </label>
+              </div>
             </div>
             
             <div className="space-y-4">
